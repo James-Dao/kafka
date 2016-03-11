@@ -79,6 +79,8 @@ func main() {
 			log.Printf("Unexpected offset on %s:%d. Expected %d, found %d, diff %d.\n", message.Topic, message.Partition, offsets[message.Topic][message.Partition]+1, message.Offset, message.Offset-offsets[message.Topic][message.Partition]+1)
 		}
 
+                log.Printf("messgae : %s",string(message.Value))
+
 		// Simulate processing time
 		time.Sleep(10 * time.Millisecond)
 
